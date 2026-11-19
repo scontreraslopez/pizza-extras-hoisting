@@ -46,3 +46,11 @@ En Windows:
 ```bat
 gradlew.bat :app:assembleDebug
 ```
+
+## Disclaimer sobre el código
+
+Esta aplicación nace de poco más que un *zero-shot* con GPT-6 Luna, usando OpenCode como *harness*. Es intencionado y no lo escondo: no afiné las instrucciones más allá de pedirle que construyera el ejercicio a partir de la idea que tenía y de la jerarquía de clases.
+
+Para una o dos pantallas, esta organización puede ser tolerable, pero escala mal, aunque la estructura de paquetes ya existiera antes del prompt. Los modelos *baseline*, como GPT-6 Luna, son una *commodity* y lo más normal es que tengáis barra libre para usarlos cuando no haya datos sensibles. Por eso es importante desarrollar buenas prácticas para orientar el trabajo hacia soluciones que puedan escalar.
+
+Reorganizar esta aplicación y mejorar su estructura también puede considerarse parte del ejercicio ya que trabaja una competencia al alza.
