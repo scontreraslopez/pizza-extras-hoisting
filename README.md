@@ -54,3 +54,16 @@ Esta aplicación nace de poco más que un *zero-shot* con GPT-6 Luna, usando Ope
 Para una o dos pantallas, esta organización puede ser tolerable, pero escala mal, aunque la estructura de paquetes ya existiera antes del prompt. Los modelos *baseline*, como GPT-6 Luna, son una *commodity* y lo más normal es que tengáis barra libre para usarlos cuando no haya datos sensibles. Por eso es importante desarrollar buenas prácticas para orientar el trabajo hacia soluciones que puedan escalar.
 
 Reorganizar esta aplicación y mejorar su estructura también puede considerarse parte del ejercicio ya que trabaja una competencia al alza.
+
+## Se pide
+
+Tomando como punto de partida este scaffold:
+
+- Organizar el código en paquetes y descomponer la interfaz en componentes. Algunos componentes agrupan otros: por ejemplo, una pizza contiene varias filas de extras; la pantalla compone el pedido y sus pizzas.
+- Mover el singleton que proporciona los datos de ejemplo a un paquete `data`.
+- Mover los modelos a su propio paquete.
+- Completar la elevación de estado para que los componentes de interfaz sean *stateless*: reciben los valores que muestran y comunican las acciones mediante callbacks. `MainScreen` (el ancestro común) debe orquestar el estado y las actualizaciones.
+
+El scaffold actual aún tiene los modelos y el singleton juntos en `DummyData.kt`, y concentra los composables en `MainActivity.kt`; los callbacks de selección están señalados con `/* TODO */`. La reorganización de paquetes y componentes forma parte del trabajo, no es algo que ya esté resuelto.
+
+Este caso resulta especialmente interesante porque combina varios niveles de componentes y colecciones: un pedido contiene pizzas y cada pizza tiene extras seleccionables. Una vez dominado el recorrido del estado y de los eventos, manipular colecciones por sí solo no tiene más misterio.
